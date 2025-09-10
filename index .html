@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Yang Tercinta 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Caveat:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart, .floating-emoji {
+            position: absolute;
+            font-size: 25px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .letter {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+            border: 3px solid #ff6b9d;
+            animation: bounceIn 1.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotate(-10deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05) rotate(2deg);
+            }
+            70% {
+                transform: scale(0.95) rotate(-1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            50% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .photo-frame {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ff6b9d;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+            animation: pulse 2s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .photo-frame::after {
+         
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: #ff6b9d;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+            }
+            100% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 35px rgba(255, 107, 157, 0.5);
+            }
+        }
+
+        .title {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+
+        .cute-subtitle {
+            font-size: 1.3em;
+            color: #ff6b9d;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .emoji-bounce {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .content {
+            font-size: 1.2em;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .cute-box {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0, #fd79a8);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 3px dashed #ffffff;
+            position: relative;
+            animation: colorShift 6s ease-in-out infinite;
+        }
+
+        @keyframes colorShift {
+            0%, 100% {
+                background: linear-gradient(135deg, #ffeaa7, #fab1a0, #fd79a8);
+            }
+            33% {
+                background: linear-gradient(135deg, #a8edea, #fed6e3, #d299c2);
+            }
+            66% {
+                background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fbc7d4);
+            }
+        }
+
+        .cute-box h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .promise-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #45b7d1, #96ceb4);
+            margin: -2px;
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        .promise-card:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+        }
+
+        .promise-card strong {
+            color: #ff6b9d;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .voice-note-container {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 25px;
+            padding: 25px;
+            margin: 30px 0;
+            color: white;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            }
+            100% {
+                box-shadow: 0 5px 30px rgba(102, 126, 234, 0.8);
+            }
+        }
+
+        .voice-note-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .voice-note-btn:hover {
+            background: white;
+            color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .voice-note-btn:active {
+            animation: recording 0.5s ease-in-out;
+        }
+
+        @keyframes recording {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+        }
+
+        .interactive-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .cute-btn {
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cute-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cute-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+        }
+
+        .hidden-surprise {
+            display: none;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            animation: surpriseReveal 1.2s ease-out;
+        }
+
+        @keyframes surpriseReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(10deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .signature {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .signature::after {
+            content: '💖';
+            font-size: 1.5em;
+            margin-left: 10px;
+            animation: heartPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        @media (max-width: 768px) {
+            .letter {
+                padding: 25px 15px;
+                margin: 10px;
+            }
+            
+            .title {
+                font-size: 2.5em;
+            }
+            
+            .promise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interactive-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <div class="container">
+        <div class="letter">
+            <div class="photo-frame">
+                <!-- Ganti src di bawah ini dengan URL foto Anda -->
+                <img src="fotogw.jpg" alt="Foto Kamu">
+            </div>
+            
+            <h1 class="title">Maaf Ya Sayangku</h1>
+            <div class="cute-subtitle">
+                <span class="emoji-bounce">🥺</span>
+                <span>Dari hati yang menyesal banget</span>
+                <span class="emoji-bounce">💔</span>
+            </div>
+
+            <div class="voice-note-container">
+                <h3 style="margin-bottom: 15px; font-family: 'Caveat', cursive; font-size: 1.8em;">
+                    🎵 Pesan Suara Khusus Buatmu 🎵
+                </h3>
+                <p style="margin-bottom: 20px; font-size: 1.1em;">
+                    Aku rekamin pesan khusus nih, dengerin ya! 🎧
+                </p>
+                <audio id="voiceNote" src="w.mp3"></audio>
+                <button class="voice-note-btn" onclick="playVoiceNote()">
+                    🎤 Putar Pesan Suara 🎤
+                </button>
+                <button class="voice-note-btn" onclick="showVoiceMessage()">
+                    💬 Baca Transkrip 💬
+                </button>
+            </div>
+
+            <div class="content">
+                <p><strong>Hai cantik! 👋</strong></p>
+                
+                <p>Aku tahu aku udah bikin kamu <span class="highlight">sedih dan kecewa</span> gara-gara sikap aku yang suka curiga-curiga gak jelas. Padahal kamu udah baik banget sama aku selama ini! 😭</p>
+                
+                <p>Aku sadar deh, <span class="highlight">kamu tuh partner terbaik</span> yang pernah aku punya. Selalu sabar ngadepin kelakuan aneh aku, selalu support aku, dan yang paling penting... selalu bikin hari-hari aku jadi cerah! ☀️</p>
+                
+                <p>Maaf ya udah jadi hts yang <span class="highlight">overthinking dan parno</span> gitu. Aku janji bakal berubah jadi yang lebih baik! 🙏</p>
+            </div>
+
+            <div class="cute-box">
+                <h3>Janji-Janji Manisnya! 🍭</h3>
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <strong>🗣️ Komunikasi Jujur</strong>
+                        Kalau ada yang ganggu pikiran, langsung cerita ke kamu, gak bakal disimpen sendiri lagi!
+                    </div>
+                    <div class="promise-card">
+                        <strong>🤝 Trust Mode: ON</strong>
+                        Gak bakal curiga-curiga lagi! Kamu udah terbukti setia dan tulus sama aku
+                    </div>
+                    <div class="promise-card">
+                        <strong>🎁 Appreciating You</strong>
+                        Bakal lebih ngeh dan berterima kasih sama semua kebaikan kamu
+                    </div>
+                    <div class="promise-card">
+                        <strong>📈 Upgrade Diri</strong>
+                        Bakal terus belajar jadi hts yang lebih dewasa dan pengertian
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-buttons">
+                <button class="cute-btn" onclick="showSurprise()">
+                    🎁 Buka Kejutan!
+                </button>
+                <button class="cute-btn" onclick="createHeartRain()">
+                    💕 Kalo Udah Maafin
+                </button>
+                <button class="cute-btn" onclick="showFunnyMeme()">
+                    😂 Meme Lucu Buat Mood
+                </button>
+            </div>
+
+            <div class="hidden-surprise" id="surprise">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 15px; font-family: 'Caveat', cursive;">
+                    🌟 Surprise! 🌟
+                </h3>
+                <p style="font-size: 1.3em; color: #2c3e50; text-align: center; line-height: 1.6;">
+                    Kamu tahu gak? Setiap hari sama kamu tuh kayak main game favorite, 
+                    selalu seru dan gak pernah bosen! Makanya aku gak mau kehilangan 
+                    player 2 terbaik dalam hidup aku! 🎮💖
+                </p>
+            </div>
+
+            <div class="content">
+                <p>Aku gak minta kamu langsung maafin aku sih, soalnya aku tahu kepercayaan itu butuh waktu buat dibangun lagi. Yang penting, aku mau <span class="highlight">buktiin lewat tindakan</span> kalau aku serius mau berubah! 💪</p>
+                
+                <p>Terima kasih ya udah mau sabar sama aku yang kadang-kadang masih bocah ini. Kamu emang <span class="highlight">the best girlfriend ever</span>! 🏆</p>
+            </div>
+
+            <div class="signature">
+                Dengan cinta dan harapan besar,<br>
+                <strong style="color: #ff6b9d;">Si hts Menyesal yang Cinta Banget Sama Kamu</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create cute floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const emojis = ['💕', '💖', '🌸', '🎀', '✨', '🌟', '💫', '🦋', '🌈', '🧸'];
+            
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-heart';
+                element.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.top = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 6 + 's';
+                element.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(element);
+            }
+        }  function playVoiceNote() {
+            const audio = document.getElementById('voiceNote');
+            audio.play().catch(() => {
+                alert("⚠️ Browser minta izin untuk memutar audio. Klik tombol lagi ya!");
+            });
+        }
+
+        function showVoiceMessage() {
+            const voiceTranscript = document.createElement('div');
+            voiceTranscript.className = 'hidden-surprise';
+            voiceTranscript.style.display = 'block';
+            voiceTranscript.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            voiceTranscript.style.color = 'white';
+            voiceTranscript.innerHTML = `
+                <h3 style="color: white; margin-bottom: 15px;">📝 Transkrip Pesan Suara</h3>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; font-style: italic;">
+                    "Hai sayang cantikku... ini aku rekam khusus buat kamu. 
+                    Maaf ya udah bikin kamu nangis dan sedih gara-gara kelakuan aku yang masih kekanak-kanakan. 
+                    Kamu tuh bener-bener orang terbaik yang pernah masuk ke hidup aku. 
+                    Aku janji bakal jadi lebih baik, lebih dewasa, dan lebih bisa ngertiin kamu. 
+                    I love you so so so much! Please forgive me? 🥺💕"
+                </div>
+            `;
+            
+            document.querySelector('.voice-note-container').appendChild(voiceTranscript);
+        }
+
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.style.display = 'block';
+        }
+
+        function createHeartRain() {
+            const hearts = ['💖', '💕', '💗', '💘', '❤️', '🧡', '💛', '💚', '💙', '💜', '🤍', '🌹', '✨'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = '-50px';
+                    heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    
+                    heart.animate([
+                        {
+                            transform: 'translateY(-50px) rotate(0deg)',
+                            opacity: 1
+                        },
+                        {
+                            transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`,
+                            opacity: 0
+                        }
+                    ], {
+                        duration: Math.random() * 2000 + 2000,
+                        easing: 'ease-in'
+                    });
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 100);
+            }
+            
+            // Show celebration message
+            setTimeout(() => {
+                alert('Yeayyy! Makasih udah mau maafin aku sayang! 🎉💕\nAku cinta kamu banget! 🥰');
+            }, 1000);
+        }
+
+        function showFunnyMeme() {
+            const memes = [
+                "Aku tanpa kamu tuh kayak:\n🍕 Pizza tanpa keju\n📱 HP tanpa wifi\n☕ Kopi tanpa gula\nPokoknya hambar banget deh! 😭",
+                "Status relationship aku sekarang:\n❌ Single\n❌ Taken\n✅ Sorry mode: activated\n✅ Begging for forgiveness 🥺",
+                "Aku sekarang:\n- Udah tobat dari overthinking ✅\n- Siap jadi hts yang baik ✅\n- Cinta kamu lebih dari mie ayam ✅\n(Dan itu udah sayaaaang banget!) 🍜💕"
+            ];
+            
+            const randomMeme = memes[Math.floor(Math.random() * memes.length)];
+            alert("😂 Meme Penghibur Mood 😂\n\n" + randomMeme);
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingElements();
+            
+            // Add some random bouncing effects
+            setInterval(() => {
+                const emojis = document.querySelectorAll('.floating-heart');
+                emojis.forEach(emoji => {
+                    if (Math.random() > 0.8) {
+                        emoji.style.animation = 'bounce 0.5s ease-in-out';
+                        setTimeout(() => {
+                            emoji.style.animation = 'float 6s ease-in-out infinite';
+                        }, 500);
+                    }
+                });
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
